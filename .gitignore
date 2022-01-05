@@ -30,6 +30,7 @@
 /lib
 /m4
 /maint.mk
+/tight-scope.mk
 /Makefile
 /Makefile.in
 /man/hello.1
