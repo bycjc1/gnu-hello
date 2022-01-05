@@ -1,7 +1,10 @@
 * Noteworthy changes in release ?.? (????-??-??) [?]
 
-* Noteworthy changes in release ?.? (????-??-??) [?]
+Remove -h and -v short options.
 
+Various code tidying, including avoiding forward declarations, removing dead
+code, new test for multibyte strings, better use of gnulib, update to more
+recent gnulib and add git hooks from coreutils.
 
 * Noteworthy changes in release 2.10 (2014-11-16) [stable]
 
