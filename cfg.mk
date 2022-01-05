@@ -19,7 +19,7 @@ GNULIB_SRCDIR ?= $(srcdir)/gnulib
 gnulib_dir = $(GNULIB_SRCDIR)
 
 # Set format of NEWS
-old_NEWS_hash := 970bc381c6e596eba2b1806c987235fe
+old_NEWS_hash := ec47ec2c3522396c86ffc95d3a4114b5
 
 update-copyright-env = \
   UPDATE_COPYRIGHT_FORCE=1 \
