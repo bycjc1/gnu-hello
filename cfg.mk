@@ -17,6 +17,7 @@
 
 GNULIB_SRCDIR ?= $(srcdir)/gnulib
 gnulib_dir = $(GNULIB_SRCDIR)
+manual_title = GNU Hello
 
 # Set format of NEWS
 old_NEWS_hash := ec47ec2c3522396c86ffc95d3a4114b5
