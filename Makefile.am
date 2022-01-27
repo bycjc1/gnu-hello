@@ -65,7 +65,6 @@ TESTS = \
 	tests/greeting-2 \
 	tests/hello-1 \
 	tests/last-1 \
-	tests/multibyte-1 \
 	tests/operand-1 \
 	tests/traditional-1
 
