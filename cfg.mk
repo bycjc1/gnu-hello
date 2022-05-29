@@ -20,7 +20,7 @@ gnulib_dir = $(GNULIB_SRCDIR)
 manual_title = GNU Hello
 
 # Set format of NEWS
-old_NEWS_hash := 42c529d4ea03d573d9f1ba65074d53f1
+old_NEWS_hash := 7342db9e652ed0319651666d5dfaadaf
 
 update-copyright-env = \
   UPDATE_COPYRIGHT_FORCE=1 \
