@@ -1,7 +1,7 @@
 # Make hello documentation.				-*-Makefile-*-
 # This is included by the top-level Makefile.am.
 
-# Copyright (C) 1995-2019 Free Software Foundation, Inc.
+# Copyright (C) 1995-2023 Free Software Foundation, Inc.
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,3 +20,7 @@ info_TEXINFOS = doc/hello.texi
 
 doc_hello_TEXINFOS = \
   doc/fdl.texi
+
+# The customization variable CHECK_NORMAL_MENU_STRUCTURE is necessary with
+# makeinfo versions ≥ 6.8.
+AM_MAKEINFOFLAGS = -c CHECK_NORMAL_MENU_STRUCTURE=1
