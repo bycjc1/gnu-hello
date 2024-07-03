@@ -20,7 +20,6 @@
 #include <errno.h>
 #include <error.h>
 #include <getopt.h>
-#include <stdnoreturn.h>
 #include <wchar.h>
 
 #include "system.h"
