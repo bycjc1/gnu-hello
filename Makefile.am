@@ -37,7 +37,14 @@ SUBDIRS = po
 bin_PROGRAMS = hello
 hello_SOURCES = src/hello.c src/system.h
 
-hello_LDADD = $(LIBINTL) $(top_builddir)/lib/lib$(PACKAGE).a
+hello_LDADD = $(top_builddir)/lib/lib$(PACKAGE).a \
+	$(HARD_LOCALE_LIB) \
+	$(LIBC32CONV) \
+	$(LIBICONV) \
+	$(LIBINTL) \
+	$(LIBUNISTRING) \
+	$(MBRTOWC_LIB) \
+	$(SETLOCALE_NULL_LIB)
 
 localedir = $(datadir)/locale
 DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
