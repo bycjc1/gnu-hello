@@ -1,6 +1,6 @@
 # Configuration for maintainer-makefile
 #
-# Copyright (c) 2012-2019 Free Software Foundation, Inc.
+# Copyright (c) 2012-2024 Free Software Foundation, Inc.
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ gnulib_dir = $(GNULIB_SRCDIR)
 manual_title = GNU Hello
 
 # Set format of NEWS
-old_NEWS_hash := 7342db9e652ed0319651666d5dfaadaf
+old_NEWS_hash := 581402d29da29110c15fddec73e357cf
 
 update-copyright-env = \
   UPDATE_COPYRIGHT_FORCE=1 \
