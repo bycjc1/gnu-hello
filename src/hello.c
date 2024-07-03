@@ -17,6 +17,8 @@
 
 #include <config.h>
 
+#include <errno.h>
+#include <error.h>
 #include <getopt.h>
 #include <stdnoreturn.h>
 #include <wchar.h>
@@ -26,8 +28,6 @@
 #include "closeout.h"
 #include "configmake.h"
 #include "dirname.h"
-#include "errno.h"
-#include "error.h"
 #include "gettext.h"
 #include "progname.h"
 #include "propername.h"
