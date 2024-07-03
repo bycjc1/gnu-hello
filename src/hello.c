@@ -130,7 +130,7 @@ main (int argc, char *argv[])
 {
   const char *greeting_msg;
   wchar_t *mb_greeting;
-  mbstate_t mbstate = { 0, };
+  mbstate_t mbstate; mbszero (&mbstate);
   size_t len;
 
   set_program_name (argv[0]);
