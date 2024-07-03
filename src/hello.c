@@ -60,23 +60,25 @@ print_help (FILE *restrict out)
   /* TRANSLATORS: --help output 3: options
      no-wrap */
   fputs (_("  -t, --traditional       use traditional greeting\n"), out);
-  fputs (_("  -g, --greeting=TEXT     use TEXT as the greeting message\n"), out);
+  fputs (_("  -g, --greeting=TEXT     use TEXT as the greeting message\n"),
+         out);
   fputs ("\n", out);
   fputs (_("      --help     display this help and exit\n"), out);
   fputs (_("      --version  output version information and exit\n"), out);
-  emit_bug_reporting_address();
+  emit_bug_reporting_address ();
   /* Don't output this redundant message for English locales.
      Note we still output for 'C' so that it gets included in the man page.  */
   if (lc_messages && STRNCMP_LIT (lc_messages, "en_"))
     {
       /* TRANSLATORS: Replace LANG_CODE in this URL with your language code
-	 <https://translationproject.org/team/LANG_CODE.html> to form one of
-	 the URLs at https://translationproject.org/team/.  Otherwise, replace
-	 the entire URL with your translation team's email address.  */
+         <https://translationproject.org/team/LANG_CODE.html> to form one of
+         the URLs at https://translationproject.org/team/.  Otherwise, replace
+         the entire URL with your translation team's email address.  */
       fprintf (out, _("Report %s translation bugs to "
-		"<https://translationproject.org/team/>\n"), PACKAGE_NAME);
+                      "<https://translationproject.org/team/>\n"),
+               PACKAGE_NAME);
     }
-  exit(out == stderr ? EXIT_FAILURE : EXIT_SUCCESS);
+  exit (out == stderr ? EXIT_FAILURE : EXIT_SUCCESS);
 }
 
 static void
@@ -84,10 +86,7 @@ parse_options (int argc, char *argv[], const char **greeting_msg)
 {
   int optc;
   int lose = 0;
-  enum {
-    OPT_HELP = CHAR_MAX + 1,
-    OPT_VERSION
-  };
+  enum { OPT_HELP = CHAR_MAX + 1, OPT_VERSION };
   static const struct option longopts[] = {
     {"greeting", required_argument, NULL, 'g'},
     {"traditional", no_argument, NULL, 't'},
@@ -99,21 +98,22 @@ parse_options (int argc, char *argv[], const char **greeting_msg)
   while ((optc = getopt_long (argc, argv, "g:t", longopts, NULL)) != -1)
     switch (optc)
       {
-	/* --help and --version exit immediately, per GNU coding standards.  */
+        /* --help and --version exit immediately, per GNU coding standards.  */
       case OPT_VERSION:
-	version_etc (stdout, PROGRAM_NAME, PACKAGE_NAME, PACKAGE_VERSION, AUTHORS, (char *) NULL);
-	exit (EXIT_SUCCESS);
+        version_etc (stdout, PROGRAM_NAME, PACKAGE_NAME, PACKAGE_VERSION,
+                     AUTHORS, (char *) NULL);
+        exit (EXIT_SUCCESS);
       case 'g':
-	*greeting_msg = optarg;
-	break;
+        *greeting_msg = optarg;
+        break;
       case OPT_HELP:
-	print_help (stdout);
+        print_help (stdout);
       case 't':
-	*greeting_msg = _("hello, world");
-	break;
+        *greeting_msg = _("hello, world");
+        break;
       default:
-	lose = 1;
-	break;
+        lose = 1;
+        break;
       }
 
   if (lose || optind < argc)
@@ -154,17 +154,17 @@ main (int argc, char *argv[])
      This is implemented in the Gnulib module "closeout".  */
   atexit (close_stdout);
 
-  parse_options(argc, argv, &greeting_msg);
+  parse_options (argc, argv, &greeting_msg);
 
-  len = strlen(greeting_msg) + 1;
-  mb_greeting = xmalloc(len * sizeof(wchar_t));
-  len = mbsrtowcs(mb_greeting, &greeting_msg, len, &mbstate);
-  if (len == (size_t)-1)
+  len = strlen (greeting_msg) + 1;
+  mb_greeting = xmalloc (len * sizeof (wchar_t));
+  len = mbsrtowcs (mb_greeting, &greeting_msg, len, &mbstate);
+  if (len == (size_t) -1)
     error (EXIT_FAILURE, errno, _("conversion to a multibyte string failed"));
 
   /* Print greeting message and exit. */
   wprintf (L"%ls\n", mb_greeting);
-  free(mb_greeting);
+  free (mb_greeting);
 
   exit (EXIT_SUCCESS);
 }

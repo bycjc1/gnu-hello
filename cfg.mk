@@ -19,6 +19,10 @@ GNULIB_SRCDIR ?= $(srcdir)/gnulib
 gnulib_dir = $(GNULIB_SRCDIR)
 manual_title = GNU Hello
 
+# Tests not to run as part of "make distcheck".
+local-checks-to-skip = \
+  sc_indent
+
 # Set format of NEWS
 old_NEWS_hash := 581402d29da29110c15fddec73e357cf
 
